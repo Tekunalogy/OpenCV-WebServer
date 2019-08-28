@@ -1,0 +1,3 @@
+[console_scripts]
+pynetworktables2js = pynetworktables2js.__main__:main
+

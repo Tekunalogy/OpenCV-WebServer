@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>LightBar Vision Client</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+	</head>
+	<body>
+		<div id="nav">
+			<div id="nav-icon" class="nav-item">LightBar Vision Client</div>
+			<div class="nav-item nav-active">HSV Filtering</div>
+		</div>
+		<div id="content">
+			<h1>Hue | Saturation | Value</h1>
+			<h2>Hue</h2>
+			<input
+                id="Hslide"
+                class="slider"
+				type="range"
+				min="1"
+				max="255"
+				step="1"
+				value="0"
+				onchange="updateSlider(this.value)"
+			/>
+			<h3>Received Data:</h3>
+			<div id="Hresponse"></div>
+<!--			-->
+			<h2>Saturation</h2>
+			<input
+                id="Sslide"
+                class="slider"
+				type="range"
+				min="1"
+				max="255"
+				step="1"
+				value="0"
+				onchange="updateSlider(this.value)"
+			/>
+			<h3>Received Data:</h3>
+			<div id="Sresponse"></div>
+			<!--			-->
+			<h2>Value</h2>
+			<input
+                id="Vslide"
+                class="slider"
+				type="range"
+				min="1"
+				max="255"
+				step="1"
+				value="0"
+				onchange="updateSlider(this.value)"
+			/>
+			<h3>Received Data:</h3>
+			<div id="Vresponse"></div>
+        </div>
+        <div id="output"><img src="{{ url_for('video_feed') }}" width="75%"></div>
+		<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/websockets.js"></script>
+		<script src="/static/js/main.js"></script>
+	</body>
+</html>
